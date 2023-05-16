@@ -1,16 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">-->
-<!--<head>-->
-<!--    <title>User Dashboard</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h2>Welcome to Admin Dashboard</h2>-->
-<!--<p>Logged as: <span sec:authentication="name"></span></p>-->
-<!--<p>Has role: <span sec:authentication="authorities"></span></p>-->
-<!--<p><a th:href="@{/}">Home</a></p>-->
-<!--<p><a th:href="@{/logout}">Log out</a></p>-->
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
@@ -18,21 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <!-- My CSS -->
+
     <link rel="stylesheet" href="/css/hub.css">
 
     <title>CRM</title>
 </head>
 <body>
 
-
-<!-- SIDEBAR -->
 <section id="sidebar">
     <a href="#" class="brand">
         <i class='bx bxs-smile'></i>
-        <span class="text">AdminHub</span>
+        <span class="text">AdminCRM</span>
     </a>
     <ul class="side-menu top">
         <li class="active">
@@ -53,41 +37,18 @@
                 <span class="text">Customer Info</span>
             </a>
         </li>
-        <!-- <li>
-            <a href="#">
-                <i class='bx bxs-message-dots' ></i>
-                <span class="text">Message</span>
+
+        <li>
+            <a th:href="@{/logout}">
+                <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                <span class="title">Sign out</span>
             </a>
-        </li> -->
-        <!-- <li>
-            <a href="#">
-                <i class='bx bxs-group' ></i>
-                <span class="text">Team</span>
-            </a>
-        </li> -->
+
+        </li>
     </ul>
-    <!-- <ul class="side-menu"> -->
-    <!-- <li>
-        <a href="#">
-            <i class='bx bxs-cog' ></i>
-            <span class="text">Settings</span>
-        </a>
-    </li> -->
-    <!-- <li>
-        <a href="#" class="logout">
-            <i class='bx bxs-log-out-circle' ></i>
-            <span class="text">Logout</span>
-        </a>
-    </li> -->
-    <!-- </ul> -->
 </section>
-<!-- SIDEBAR -->
 
-
-
-<!-- CONTENT -->
 <section id="content">
-    <!-- NAVBAR -->
     <nav>
         <i class='bx bx-menu' ></i>
         <a href="#" class="nav-link">Categories</a>
@@ -104,12 +65,10 @@
             <span class="num">8</span>
         </a>
         <a href="#" class="profile">
-            <!-- <img src="img/people.png"> -->
+
         </a>
     </nav>
-    <!-- NAVBAR -->
 
-    <!-- MAIN -->
     <main>
         <div class="head-title">
             <div class="left">
@@ -130,7 +89,11 @@
             </a>
             <a href="#" class="btn-download">
                 <i class='bx bxs-cloud-download' ></i>
-                <span class="text">Download PDF</span>
+                <a th:href="@{/download-pdf}">
+                    <i class='bx bxs-shopping-bag-alt' ></i>
+                    <span class="text">Download PDF</span>
+                </a>
+
             </a>
         </div>
 
@@ -180,7 +143,6 @@
                     <tbody>
                     <tr>
                         <td>
-                            <!-- <img src="img/people.png"> -->
                             <p>Keza Ketsia</p>
                         </td>
                         <td>kketsia@gmail.com</td>
@@ -189,43 +151,29 @@
                     </tr>
                     <tr>
                         <td>
-                            <!-- <img src="img/people.png"> -->
                             <p>Jean Yves</p>
                         </td>
                         <td>jeanyves@gmail.com</td>
                         <td>079879654</td>
                         <td>Kimironko</td>
-<!--                        <td><span class="status pending">Pending</span></td>-->
+
                     </tr>
                     <tr>
                         <td>
-                            <!-- <img src="img/people.png"> -->
-                            <p>Parfait Inigga</p>
-                        </td>
-                        <td>parfaitinig@gmail.com</td>
-                        <td>0788510285</td>
-                        <td>Nyamirambo</td>
-<!--                        <td><span class="status process">Process</span></td>-->
-                    </tr>
-                    <tr>
-                        <td>
-                            <!-- <img src="img/people.png"> -->
                             <p>Kinah Shekinah</p>
                         </td>
                         <td>kinahshekinah@gmail.com</td>
                         <td>0789160775</td>
                         <td>Remera</td>
-<!--                        <td><span class="status pending">Pending</span></td>-->
                     </tr>
                     <tr>
                         <td>
-                            <!-- <img src="img/people.png"> -->
+
                             <p>Shami Kelly Carter</p>
                         </td>
                         <td>kellynikuze30@gmail.com</td>
                         <td>0780549118</td>
                         <td>KNY City</td>
-<!--                        <td><span class="status completed">Completed</span></td>-->
                     </tr>
                     </tbody>
                 </table>
@@ -234,10 +182,8 @@
 
         </div>
     </main>
-    <!-- MAIN -->
-</section>
-<!-- CONTENT -->
 
+</section>
 
 <script src="/js/hub.js"></script>
 </body>
