@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM - Log In</title>
+    <link rel="stylesheet" type="text/css" href="/css/style1.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="form-container">
+
+        <form th:action="@{/login}" method="POST" class="form-signin" >
+            <h1>Login</h1>
+
+            <label>Username</label>
+            <input type="text" name="email" th:placeholder="Email" />
+            <br><br>
+            <label>Password</label>
+            <input type="password" th:placeholder="Password" name="password" />
+            <br><br>
+
+
+            <div th:if="${param.error}"><p>Email or Password is invalid.</p></div> <br />
+            <button type="Submit" th:text="Login"></button><p>Don't have an account?</p><a th:href="@{|/register|}" th:text="'Register'"></a><br
+
+        </form>
+
+    </div>
+</div>
+<script src="/js/main.js"></script>
+</body>
+</html>
